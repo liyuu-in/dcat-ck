@@ -69,6 +69,7 @@ class DoubleSubmitCookieTokenValidator implements TokenValidatorInterface
     {
         $paramToken = trim((string) $request->get($this->tokenParamName));
         //$cookieToken = trim((string) $request->cookies->get($this->tokenCookieName));
+        // fix ckCsrfToken null
         $cookieToken =  trim((string) Request::createFromGlobals()->cookies->get($this->tokenCookieName));
         if (\strlen($paramToken) >= $this->minTokenLength && \strlen($cookieToken) >= $this->minTokenLength) {
             return $paramToken === $cookieToken;
