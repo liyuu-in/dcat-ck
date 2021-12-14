@@ -52,3 +52,6 @@ CKEDITOR.editorConfig = function (config) {
 
     config.allowedContent = true;
 };
+
+CKEDITOR.dtd.$removeEmpty.i = false;
+CKEDITOR.dtd.$removeEmpty.span = false;
